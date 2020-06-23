@@ -43,10 +43,10 @@ app.use(
 );
 
 require('dotenv/config');
-app.get('/', function (req, res) {
+app.get('/api/', function (req, res) {
 	res.json({ msg: 'This is KYC Backend' });
 });
-app.get('/get_token', async function (req, res, next) {
+app.get('/api/get_token', async function (req, res, next) {
 	const { UserID } = req.query;
 	try {
 		let ts = Math.round(Date.now() / 1000);
@@ -86,7 +86,7 @@ app.get('/get_token', async function (req, res, next) {
 	}
 });
 
-app.post('/get_token', function (req, res, next) {
+app.post('/api/get_token', function (req, res, next) {
 	console.log('Post');
 });
 
